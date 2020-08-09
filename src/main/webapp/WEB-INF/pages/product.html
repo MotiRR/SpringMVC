@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring MVC</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>function getUserById() {
+     document.location.href = './' + document.getElementById('product_id').value;
+}</script>
+</head>
+
+<body>
+<h1>Продукт:</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Имя</td>
+        <td>Возвраст</td>
+    </tr>
+    </thead>
+    <tbody>
+    <label>id</label>
+    <input id="product_id" type="number" name="id">
+    <input type="button" class="btn btn-primary" value="Получить" onclick="getUserById()">
+    <tr>
+        <td th:text="${frontProduct.id}"></td>
+        <td th:text="${frontProduct.name}"></td>
+        <td th:text="${frontProduct.cost}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
